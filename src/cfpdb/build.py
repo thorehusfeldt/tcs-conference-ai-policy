@@ -18,7 +18,7 @@ from cfpdb.model import CfP, Database, DataError, Round, load
 
 ROOT = Path.cwd()
 OUT = ROOT / "_site"
-REPO = "https://github.com/thorehusfeldt/tcs-cfp-policies"
+REPO = "https://github.com/thorehusfeldt/tcs-conference-ai-policy"
 SOURCE_NAMES = {
     "website": "conference website",
     "pc-chair-page": "PC chair\u2019s page",

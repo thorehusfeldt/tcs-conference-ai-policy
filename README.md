@@ -3,6 +3,8 @@
 What the calls for papers of theoretical computer science conferences say about
 submission, reviewing, and the use of AI in 2026-.
 
+**The site: https://thorehusfeldt.github.io/tcs-conference-ai-policy/**
+
 See Action 6 of
 [*AI and TCS: The Next Six Months*](https://simons.berkeley.edu/news-publications-videos/ai-tcs-working-group)
 (Simons Institute, 2026).
