@@ -1,0 +1,375 @@
+---
+source: pc-chair-page
+url: https://sanjeevkhanna.org/FOCS2026_CFP.html
+last-modified: 2026-07-15
+retrieved: 2026-10-11
+note: The PC chair's own copy of the CfP.
+deadline: 2026-04-01
+policies:
+  idea-lineage: not-mentioned
+  ai-methodology:
+    value: "(✓)"
+    quote: should be disclosed at the time of submission in an “AI Disclosure” statement placed at the end of the paper.
+    note: The same one-line template as STOC 2027, under the name “AI Disclosure”.
+  ai-use-permitted:
+    value: "(✓)"
+    quote: "Disclosure of substantive use: The use of LLMs or other generative AI tools to generate or materially affect substantive content should be disclosed"
+    note: Permitted implicitly, through the disclosure rule; nothing said about penalizing it.
+  author-attestation:
+    value: "(✓)"
+    quote: All listed authors must take full responsibility for the content of the submission.
+  key-ideas-upfront:
+    value: "10"
+    quote: The submission should contain, within the initial ten pages following the title page, a clear presentation of the merits of the paper
+  exposition-rejection: not-mentioned
+  submission-limit: not-mentioned
+  reviewer-ai: not-mentioned
+  public-posting:
+    value: "(✓)"
+    quote: Authors are encouraged to also make full versions of their submissions freely accessible in an online repository such as the arXiv, ECCC, or the Cryptology ePrint archive.
+    note: Encouraged, not required.
+  video-talk: not-mentioned
+  anonymity:
+    value: "✓"
+    quote:
+      - FOCS 2026 will use double-blind reviewing.
+      - This information can only be seen by the program committee chairs and thus cannot be used by the rest of the program committee to deanonymize authors.
+    note: Only the PC chairs see the authors' names.
+---
+
+~~~~ text
+[FOCS logo]
+
+67th Annual Symposium on Foundations of Computer Science (FOCS 2026)
+
+Call for Papers: FOCS 2026
+
+November 8 to 11, 2026; New York City, NY, USA
+
+Paper Submission Deadline: April 1, 2026 at 5:00 PM EDT (21:00 UTC)
+
+The 67th Annual Symposium on Foundations of Computer Science (FOCS 2026),
+sponsored by the IEEE Computer Society Technical Committee on Mathematical
+Foundations of Computing, will be held in New York, USA, November 8–11, 2026.
+Information about previous conferences can be found at the FOCS Conference
+Archive.
+
+Papers presenting new and original research on theory of computation are
+sought. Typical but not exclusive topics of interest include:
+
+- Algebraic computation
+- Algorithmic coding theory
+- Algorithmic game theory
+- Algorithmic graph theory
+- Algorithms and data structures
+- Analysis of Boolean functions
+- Approximation algorithms
+- Average-case algorithms and complexity
+- Circuit complexity
+- Combinatorial optimization
+- Combinatorics and graph theory
+- Communication complexity
+- Computational applications of logic
+- Computational complexity
+- Computational geometry
+- Computational learning theory
+- Continuous optimization
+- Cryptography
+- Dynamic algorithms
+- Foundations of fairness and privacy
+- Foundations of machine learning
+- Online algorithms
+- Parallel and distributed algorithms
+- Parameterized algorithms
+- Pseudorandomness and derandomization
+- Quantum computing
+- Randomization and probabilistic method
+- Spectral algorithms
+- Streaming algorithms
+- Sublinear time algorithms
+- Theoretical aspects of networking, information retrieval, computational
+  biology, and databases
+
+Papers that broaden the reach of the theory of computing or raise important
+problems benefiting from theoretical investigation are encouraged.
+
+The submission server is available here: https://focs26.hotcrp.com/
+
+Important Dates
+
+  Event                 Date
+  --------------------- ------------------------------------------
+  Submission deadline   April 1, 2026 at 5:00 PM EDT (21:00 UTC)
+  Paper notification    July 3, 2026
+  Conference dates      November 8–11, 2026
+
+Submission Format
+
+Full submissions, submitted by the submission deadline, should contain the
+abstract and the complete paper. The abstract should summarize the paper’s
+contributions. There is no page limit and authors are encouraged to use the
+“full version” of their paper as the submission. The submission should
+contain, within the initial ten pages following the title page, a clear
+presentation of the merits of the paper, including a discussion of the paper’s
+importance within the context of prior work and a description of the key
+technical and conceptual ideas used to achieve its main claims. The submission
+should be addressed to a broad spectrum of theoretical computer science
+researchers. Proofs must be provided which can enable the main mathematical
+claims of the paper to be fully verified. Although there is no bound on the
+length of a submission, material other than the abstract, references, and the
+first ten pages will be read at the committee’s discretion.
+
+Authors are encouraged to put the references at the very end of the
+submission. The submission should be typeset using 11-point or larger fonts,
+in a single-column, single-space (between lines) format with ample spacing
+throughout and at least 1-inch margins all around, on letter-size (8 1/2 x 11
+inch) paper. Submissions deviating significantly from these guidelines risk
+rejection without consideration of their merits.
+
+Submission Instructions
+
+Authors are required to submit their papers electronically, in PDF (without
+security restrictions on copying or printing). Please submit using this link:
+https://focs26.hotcrp.com/
+
+The submission process will include a declaration of conflicts of interest, to
+help manage the double-blind review process. This information can only be seen
+by the program committee chairs and thus cannot be used by the rest of the
+program committee to deanonymize authors.
+
+Please only include conflicts of interest as defined by SafeToC:
+
+- Family member or close friend
+- Ph.D. advisor or advisee (no time limit), or postdoctoral or undergraduate
+  mentor or mentee within the past five years.
+- Person with the same affiliation.
+- Person involved in an alleged incident of harassment. (It is not required
+  that the incident be reported.)
+- Reviewer owes the author a favor (e.g., recently requested a reference
+  letter).
+- Frequent or recent collaborator (within the last 2 years) whom you believe
+  cannot objectively review your work.
+
+If an author believes that they have a valid reason for a conflict of interest
+not listed above, then they can contact the PC chairs or any ToC advocate
+affiliated with this conference directly (as listed on the front page). Note
+that if the PC chairs have reason to doubt the validity of the claim of
+conflict of interest, then they may request that a ToC advocate confidentially
+verify the reason for the conflict. If authors are uncertain, they are
+encouraged to email the PC chairs or a ToC advocate. The submission software
+asks for conflicts with PC members, and in addition contains a text form in
+which one can declare additional conflicts.
+
+Authors are encouraged to also make full versions of their submissions freely
+accessible in an online repository such as the arXiv, ECCC, or the Cryptology
+ePrint archive. It is expected that authors of accepted papers will make their
+full papers, with proofs, publicly available by the camera-ready deadline.
+
+Use of Large Language Models (LLMs) and Generative AI Tools
+
+Authors should note the following key points regarding use of large language
+models (LLMs) and other generative AI tools in the preparation of their
+submissions. These points are meant to complement IEEE’s policy on AI
+generated text, available here:
+https://conferences.ieeeauthorcenter.ieee.org/author-ethics/guidelines-and-policies/submission-policies/
+
+- Authorship is restricted to humans: Only human individuals may be listed as
+  authors. Generative AI tools may not be credited as authors or co-authors.
+  All listed authors must take full responsibility for the content of the
+  submission.
+- Disclosure of substantive use: The use of LLMs or other generative AI tools
+  to generate or materially affect substantive content should be disclosed at
+  the time of submission in an “AI Disclosure” statement placed at the end of
+  the paper. The disclosure should identify the tool used and indicate which
+  parts of the submission were generated or materially influenced. If such
+  tools play a material role in the research methodology, analyses,
+  experiments, or implementation, this role should also be appropriately
+  described in the body of the paper.
+  Authors may use the following format (if applicable):
+  AI Disclosure: We used [Tool Name] to assist with [Brief Description of
+  Use]. The tool materially affected [Sections X and Y]. More details can be
+  found in [Section Z]. The authors verified the correctness and originality
+  of all content including references.
+  Use of AI tools solely for minor copy-editing or grammar/clarity
+  improvements applied to the authors’ own text does not require disclosure.
+- Authors are fully responsible for their submissions: Authors are accountable
+  for the accuracy, originality, and integrity of all material in their paper,
+  including any content produced with AI assistance. This includes
+  responsibility for errors, plagiarism, misrepresentation, or fabricated
+  content (e.g., “hallucinatory” references) generated by such tools.
+
+Potential concerns regarding compliance with these principles will be handled
+in accordance with applicable IEEE publication policies and conference
+procedures.
+
+For reference, STOC 2026 adopted a similar policy:
+https://acm-stoc.org/stoc2026/stoc2026-cfp.html
+
+Submission Guidelines
+
+FOCS 2026 will use double-blind reviewing. As such, submissions should not
+reveal the identity of the authors in any way. In particular, authors’ names,
+affiliations, and email addresses should not appear at the beginning or in the
+body of the submission. Authors should not include obvious references that
+reveal their own identity, and should ensure that any references to their own
+related work are in the third person (e.g., not “We build on our previous work
+…” but rather “We build on the work of …”). The acknowledgement section should
+be omitted at the time of the submission. The purpose of this double-blind
+process is to help PC members and external reviewers come to an initial
+judgment about the paper without bias, and not to make it impossible for them
+to discover who the authors are if they were to try. Nothing should be done in
+the name of anonymity that weakens the submission or makes the job of
+reviewing the paper more difficult. In particular, important references should
+not be omitted or anonymized. In addition, authors should feel free to
+disseminate their ideas or draft versions of their paper as they normally
+would. For example, authors may post drafts of their papers on the web, submit
+them to arXiv, and give talks on their research ideas.
+
+Submissions by PC members (other than the PC chair and co-chair) are allowed.
+If any of the authors of a submission is a PC member, this should be indicated
+in the submission form by checking the corresponding box.
+
+Recommended best practices for references. Authors are encouraged to include
+hyperlink cross-referencing for bibliographic entries, theorems, sections, and
+so on, using for example the hyperref, cleverref, or varioref packages. If
+helpful, a table of contents may be added on a page immediately following the
+title page; this will not count towards the first ten pages. Authors are asked
+to avoid "et al." in citations in favor of an equal mention of all authors'
+surnames. If the number of authors is large, consider writing "\cite{XYZ}
+show..." instead of "X et al. show". Bibliographic references should
+preferably be alphanumeric (e.g., the first letters of the authors' surnames,
+or at least the first three followed by +) followed by year of publication,
+instead of just a numerical reference. If using BibTeX, this can be
+accomplished by using \bibliographystyle{alpha} or
+\bibliographystyle{alphaurl}.
+
+Prior and simultaneous submission. The conference will follow SIGACT’s policy
+on prior publication and simultaneous submissions. Work that has been
+previously published in another conference proceedings or journal, or which is
+scheduled for publication prior to November 2026, will not be considered for
+acceptance at FOCS 2026. Simultaneous submission of the same (or essentially
+the same) abstract to FOCS 2026 and to another conference with published
+proceedings or journal is not allowed. The program committee may interact with
+program chairs of other (past or future) conferences to find out about closely
+related submissions. Notwithstanding the above, works that were previously
+published or announced in another journal or conference with a significantly
+different format, content, and audience than FOCS might still be considered at
+the PC’s discretion; in such cases authors should contact the program chair
+prior to submission.
+
+Awards
+
+Best Paper Award. All submissions are automatically eligible for the Best
+Paper award. The committee may decide to split the awards between multiple
+papers, or to decline to make an award.
+
+Machtey Best Student Paper Award. The Machtey award will be given to the best
+paper or papers written solely by one or more students. An abstract is
+eligible if all authors are full-time students at the time of submission. This
+should be indicated at the time of submission. To inform the program committee
+about a paper's eligibility, check the appropriate box in the web form on the
+submission server.
+
+Program Committee
+
+  Name                       Affiliation
+  -------------------------- ----------------------------------------------------------
+  Aaron Roth                 University of Pennsylvania
+  Aaron Sidford              Stanford University
+  Aayush Jain                Carnegie Mellon University
+  Adam Bouland               Stanford University
+  Akanksha Agrawal           IIT Madras
+  Alexander Golovnev         Georgetown University
+  Alkida Balliu              Gran Sasso Science Institute
+  Amey Bhangale              University of California Riverside
+  Amir Abboud                Weizmann Institute
+  Amir Shpilka               Tel Aviv University
+  Amit Kumar                 IIT Delhi
+  Anand Natarajan            MIT
+  Andrea Coladangelo         University of Washington
+  Andreas Wiese              Technical University of Munich
+  Aravindan Vijayaraghavan   Northwestern University
+  Arkadev Chattopadhyay      Tata Institute of Fundamental Research (TIFR)
+  Cameron Musco              University of Massachusetts Amherst
+  Chaitanya Swamy            University of Waterloo
+  Chandra Chekuri            University of Illinois Urbana-Champaign
+  Chin Ho Lee                North Carolina State University
+  Clement Canonne            University of Sydney
+  Dakshita Khurana           University of Illinois Urbana-Champaign and NTT Research
+  Dana Ron                   Tel Aviv University
+  David Wajc                 Technion
+  Debarati Das               Penn State University
+  Debmalya Panigrahi         Duke University
+  Deeparnab Chakrabarty      Dartmouth College
+  Dor Minzer                 MIT
+  Erik Waingarten            University of Pennsylvania
+  Eshan Chattopadhyay        Cornell University
+  Euiwoong Lee               University of Michigan
+  Fabian Kuhn                University of Freiburg
+  Fernando Granha Jeronimo   University of Illinois Urbana-Champaign
+  Gillat Kol                 Princeton University
+  Greg Bodwin                University of Michigan
+  Huacheng Yu                Princeton University
+  Jan van den Brand          Georgia Institute of Technology
+  Jiapeng Zhang              University of Southern California
+  Josh Alman                 Columbia University
+  Jukka Suomela              Aalto University
+  Karl Bringmann             ETH Zurich
+  Kaave Hosseini             University of Rochester
+  Kent Quanrud               Purdue University
+  Kewen Wu                   Institute of Advanced Study and Caltech
+  László Végh                University of Bonn
+  Madhu Sudan                Harvard University
+  Madhur Tulsiani            Toyota Technological Institute at Chicago
+  Maryam Aliakbarpour        Rice University
+  Merav Parter               Weizmann Institute
+  Michal Feldman             Tel Aviv University
+  Mihalis Yannakakis         Columbia University
+  Mitali Bafna               University of Washington
+  Nike Sun                   MIT
+  Noga Ron-Zewi              University of Haifa
+  Pooya Hatami               Ohio State University
+  Prahladh Harsha            Tata Institute of Fundamental Research (TIFR)
+  Pravesh Kothari            Princeton University
+  R. Ravi                    Carnegie Mellon University
+  Raghu Meka                 University of California Los Angeles
+  Rico Zenklusen             ETH Zurich
+  Roei Tell                  University of Toronto
+  Ronald de Wolf             CWI, University of Amsterdam, and Google Research
+  Ronitt Rubinfeld           MIT
+  Ruta Mehta                 University of Illinois Urbana-Champaign
+  Sagnik Mukhopadhyay        University of Birmingham
+  Sahil Singla               Georgia Institute of Technology
+  Sanjeev Khanna (Chair)     New York University
+  Sepehr Assadi (Co-chair)   University of Waterloo
+  Sepideh Mahabadi           Microsoft Research
+  Shay Solomon               Tel Aviv University
+  Shi Li                     Nanjing University
+  Shuichi Hirahara           National Institute of Informatics
+  Siddharth Barman           Indian Institute of Science
+  Sitan Chen                 Harvard University
+  Siyao Guo                  NYU Shanghai
+  Soheil Behnezhad           Northeastern University
+  Sumegha Garg               Rutgers University
+  Susanna Rezende            Lund University
+  Thomas Kesselheim          University of Bonn
+  Thuy-Duong (June) Vuong    University of California San Diego
+  Uma Girish                 Columbia University
+  Valerie King               University of Victoria
+  Vida Dujmovic              University of Ottawa
+  Yuri Makarychev            Toyota Technological Institute at Chicago
+  Zhiyi Huang                University of Hong Kong
+  Zihan Tan                  University of Minnesota
+
+General Chair: Marshall Ball, New York University
+
+SafeToC Advocates:
+
+- Mahdi Cheraghchi, University of Michigan
+- Sumegha Garg, Rutgers University
+- Divyarthi Mohan, Boston University
+- Yuval Rabani, Hebrew University of Jerusalem
+- Clément Canonne, University of Sydney
+
+------------------------------------------------------------------------------
+~~~~

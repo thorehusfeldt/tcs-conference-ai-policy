@@ -1,0 +1,83 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<form id="filters" hidden>
+  <fieldset>
+    <legend>Conference (click ▶&#xFE0E; in the table to unfold)</legend>
+    {% for v in venues %}
+    <label><input type="checkbox" name="venue" value="{{ v.id }}" checked> {{ v.short }}</label>
+    {% endfor %}
+  </fieldset>
+</form>
+
+<p class="click">Click a column heading to compare that policy across all calls for papers.</p>
+<div class="scroll">
+<table id="policies">
+  <thead>
+    <tr>
+      <th scope="col">Conference</th>
+      <th scope="col">Deadline</th>
+      {% for c in db.policies.values() %}
+      <th scope="col" class="policy"><a href="policies/{{ c.name }}.html" title="{{ c.summary }}">{{ c.short }}</a></th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% macro marks(line) %}
+      {% for x in line.cells %}
+      <td class="mark">{% if x.href %}<a href="{{ x.href }}" title="{{ x.title }}">{{ x.text }}</a>{% else %}<span title="{{ x.title }}">{{ x.text }}</span>{% endif %}</td>
+      {% endfor %}
+    {% endmacro %}
+    {% set ncols = db.policies | length + 1 %}
+    {% for s in series %}
+    {% set sid = "s" ~ loop.index %}
+    {% set top = s.current %}
+    {% set unfoldable = s.rows | length > 1 or top.versions | length > 1 %}
+    <tr data-level="series" data-series="{{ sid }}" data-venue="{{ top.round.venue }}">
+      <th scope="row">
+        {% if unfoldable %}<button type="button" class="toggle" data-series="{{ sid }}" aria-expanded="false" title="Show every year">{{ s.label }} {{ when(top.round) }}</button>
+        {% else %}<span class="toggle-none">{{ s.label }} {{ when(top.round) }}</span>{% endif %}
+      </th>
+      <td class="date">{{ top.current.deadline or "" }}</td>
+      {{ marks(top.current) }}
+    </tr>
+    <tr data-level="header" data-series="{{ sid }}" data-venue="{{ top.round.venue }}" hidden>
+      <th scope="row"><button type="button" class="toggle" data-series="{{ sid }}" aria-expanded="true" title="Fold up">{{ s.label }}</button></th>
+      <td colspan="{{ ncols }}"></td>
+    </tr>
+    {% for r in s.rows %}
+    {% set rid = sid ~ "r" ~ loop.index %}
+    {% set several = r.versions | length > 1 %}
+    <tr data-level="round" data-series="{{ sid }}" data-round="{{ rid }}" data-venue="{{ r.round.venue }}" hidden>
+      <th scope="row" class="indent">
+        {% if several %}<button type="button" class="toggle" data-round="{{ rid }}" aria-expanded="false" title="Show every version of the call for papers">{{ when(r.round) }}</button>
+        {% else %}<span class="toggle-none">{{ when(r.round) }}</span>{% endif %}
+      </th>
+      <td class="date">{{ r.current.deadline or "" }}</td>
+      {{ marks(r.current) }}
+    </tr>
+    {% for v in r.versions if several %}
+    <tr data-level="version" data-series="{{ sid }}" data-round="{{ rid }}" data-venue="{{ r.round.venue }}" hidden>
+      <th scope="row" class="indent">
+        {% if loop.first %}<button type="button" class="toggle" data-round="{{ rid }}" aria-expanded="true" title="Fold up">{{ when(r.round) }}</button><br>{% endif %}
+        <span class="version-label"><a href="{{ page(v.cfp) }}">{{ v.cfp.date }}</a> · {{ sources.get(v.cfp.meta.source, v.cfp.meta.source) }}{% if v.cfp.meta.call %}, {{ v.cfp.meta.call }}{% endif %}</span>
+      </th>
+      <td class="date">{{ v.deadline or "" }}</td>
+      {{ marks(v) }}
+    </tr>
+    {% endfor %}
+    {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<p class="click">Click any underlined entry to read the relevant section of the call for papers.</p>
+<dl class="legend">
+  <dt>✓</dt><dd>yes</dd>
+  <dt>(✓)</dt><dd>pretty much</dd>
+  <dt>✗</dt><dd>no</dd>
+  <dt>—</dt><dd>not mentioned in the call for papers</dd>
+  <dt>?</dt><dd>not yet checked</dd>
+</dl>
+<script src="static/filter.js"></script>
+{% endblock %}

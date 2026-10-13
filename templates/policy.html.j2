@@ -1,0 +1,30 @@
+{% extends "base.html.j2" %}
+{% block title %}{{ policy.title }} · {% endblock %}
+{% block main %}
+{% set links = source("policies.yaml") %}
+<h1>{{ policy.title }}</h1>
+<p class="meta">
+  <a href="{{ links.source }}">source</a> · <a href="{{ links.history }}">history</a>
+</p>
+<p class="lede">{{ policy.summary }}</p>
+
+<h2>In the calls for papers</h2>
+{% if uses %}
+<table class="uses">
+  {% for r, x in uses %}
+  <tr>
+    <th scope="row">{{ label(db, r) }}</th>
+    {% if x.quotes %}
+    <td class="mark"><a href="{{ root }}{{ x.href }}">{{ x.text }}</a></td>
+    <td><a class="quote" href="{{ root }}{{ x.href }}">{{ x.quotes | join(" … ") }}</a>{% if x.note %} <span class="note">{{ x.note }}</span>{% endif %}</td>
+    {% else %}
+    <td class="mark"><a class="silent" href="{{ root }}{{ x.href }}" title="{{ x.title }}">{{ x.text }}</a></td>
+    <td></td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>No call for papers has been checked for this policy yet.</p>
+{% endif %}
+{% endblock %}

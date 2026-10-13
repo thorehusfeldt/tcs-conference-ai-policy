@@ -1,0 +1,57 @@
+# The policies, one per column of the table, left to right.
+# A CfP file refers to a policy by its name, such as `name: submission-limit`.
+
+- name: ai-use-permitted
+  title: AI use in authoring is permitted
+  short: AI use for authoring
+  summary: "AI use in ideas or writing is permitted and not penalized, as long as it does not inhibit human understanding."
+
+- name: author-attestation
+  title: Author attestation
+  short: Attestation
+  summary: "Authors attest that they understand and have verified the work, and accept responsibility for its correctness and presentation."
+
+- name: ai-methodology
+  title: AI methodology section
+  short: AI methodology section
+  summary: "Papers contain a section on how AI was used, addressing an itemized checklist."
+
+- name: key-ideas-upfront
+  title: Key ideas within the first pages
+  short: Key ideas within (pages)
+  summary: "The number of pages within which the submission must present its results, motivation, and key ideas; the rest is read at the committee’s discretion. In parentheses if only recommended."
+
+- name: video-talk
+  title: Video talk with submission
+  short: Video talk
+  summary: "Submissions are accompanied by a recorded talk in which an author explains the work."
+
+- name: submission-limit
+  title: Submission limit per author
+  short: Submission limit
+  summary: "Each author may appear on at most a fixed number of submissions."
+
+- name: reviewer-ai
+  title: AI-assisted reviewing, with disclosure
+  short: AI use for reviewing
+  summary: "Reviewers may use AI to check technical claims, disclosing its use; judgements of novelty, significance, and interest remain the reviewer's own."
+
+- name: anonymity
+  title: Authors anonymous
+  short: Authors anonymous
+  summary: "Whether the program committee reviews submissions without seeing the authors' names: ✓ double-blind (at most the PC chairs see them), (✓) partly, ✗ not anonymous."
+
+- name: public-posting
+  title: Public posting of submissions
+  short: Public posting
+  summary: "Submissions are posted publicly, for example on arXiv, no later than the submission deadline."
+
+- name: exposition-rejection
+  title: Rejection for poor exposition
+  short: Exposition rejection
+  summary: "Papers may be rejected with a one-sentence review solely because of sufficiently unclear exposition."
+
+- name: idea-lineage
+  title: Lineage of AI-generated ideas
+  short: Idea lineage
+  summary: "Authors trace the lineage of AI-generated ideas and credit prior work where the ideas are introduced."

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% endblock %}TCS Conference Policies</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+<header>
+  <p class="site"><a href="{{ root }}index.html">TCS Conference Policies</a></p>
+  <p class="tagline">Rules on submission, reviewing, and the use of AI, as stated in the calls for papers</p>
+</header>
+<main>
+{% block main %}{% endblock %}
+</main>
+<footer>
+  <p>
+    A proof of concept for Action&nbsp;6 of
+    <a href="https://simons.berkeley.edu/news-publications-videos/ai-tcs-working-group"><cite>AI and TCS: The Next Six Months</cite></a>
+    (Simons Institute, 2026).
+    Data and code: <a href="{{ repo }}">{{ repo | replace("https://", "") }}</a>.
+  </p>
+</footer>
+</body>
+</html>

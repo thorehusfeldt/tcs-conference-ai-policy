@@ -1,0 +1,32 @@
+{% extends "base.html.j2" %}
+{% block title %}{{ db.venues[cfp.venue].short }} {{ cfp.year }} · {% endblock %}
+{% block main %}
+{% set links = source(cfp.path) %}
+<h1>{{ db.venues[cfp.venue].short }} {{ cfp.year }}: call for papers</h1>
+<table class="meta-table">
+  {% if cfp.meta.subject %}<tr><th scope="row">Subject</th><td>{{ cfp.meta.subject }}</td></tr>{% endif %}
+  <tr><th scope="row">Source</th><td>{{ sources.get(cfp.meta.source, cfp.meta.source) }}{% if cfp.meta.url %} · <a href="{{ cfp.meta.url }}">{{ cfp.meta.url }}</a>{% endif %}</td></tr>
+  {% if cfp.meta.published %}<tr><th scope="row">Published</th><td>{{ cfp.meta.published }}</td></tr>{% endif %}
+  {% if cfp.meta["last-modified"] %}<tr><th scope="row">Last modified</th><td>{{ cfp.meta["last-modified"] }}</td></tr>{% endif %}
+  {% if cfp.meta.retrieved %}<tr><th scope="row">Retrieved</th><td>{{ cfp.meta.retrieved }}</td></tr>{% endif %}
+  {% if cfp.meta["message-id"] %}<tr><th scope="row">Message-ID</th><td><code>{{ cfp.meta["message-id"] }}</code></td></tr>{% endif %}
+  {% if cfp.meta.note %}<tr><th scope="row">Note</th><td>{{ cfp.meta.note }}</td></tr>{% endif %}
+  <tr><th scope="row">Covers</th><td>{{ cfp.covers | reject("equalto", "") | join(", ") or "the single submission round" }}</td></tr>
+  {% if cfp.supersedes %}<tr><th scope="row">Supersedes</th><td><a href="{{ cfp.supersedes }}.html">{{ cfp.supersedes }}</a></td></tr>{% endif %}
+  <tr><th scope="row">This record</th><td><a href="{{ links.source }}">source</a> · <a href="{{ links.history }}">history</a></td></tr>
+</table>
+
+<h2>Policies</h2>
+<table class="uses">
+  {% for s in cfp.statements %}
+  <tr>
+    <th scope="row"><a href="{{ root }}policies/{{ s.policy }}.html">{{ db.policies[s.policy].title }}</a></th>
+    <td class="mark">{% if s.quotes %}<a href="#q{{ loop.index0 }}-0">{{ s.value }}</a>{% else %}{{ s.value }}{% endif %}</td>
+    <td>{{ s.note }}{% if s.applies_to %} (rounds {{ s.applies_to | join(", ") }}){% endif %}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h2>Text</h2>
+<pre class="cfp">{{ text }}</pre>
+{% endblock %}
