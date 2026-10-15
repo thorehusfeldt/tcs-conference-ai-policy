@@ -16,6 +16,7 @@ MARKS = ("✓", "(✓)", "✗")  # a policy left out of a CfP file shows as "?"
 NOT_MENTIONED = "not-mentioned"  # shown as "—"
 NUMBER = re.compile(r"\d+|\(\d+\)")  # such as a page count; "(10)" is "pretty much 10"
 FENCE = "~~~~"
+CALL = "call"  # the default kind; others, such as reviewing-guidelines, add to it
 SOURCES = {"website": 0, "dmanet": 1, "types-announce": 1}  # lower is preferred
 
 
@@ -73,6 +74,7 @@ class CfP:
     venue: str
     year: int
     slug: str
+    kind: str  # "call", or another document, such as "reviewing-guidelines"
     date: date
     meta: dict[str, Any]
     covers: tuple[str, ...]
@@ -106,8 +108,9 @@ class Database:
     def versions(self, rnd: Round) -> list[CfP]:
         """Return the CfPs covering the given round, the one to show first.
 
-        The conference website comes first, then the announcement lists, then
-        anything else; within each, the most recent first.
+        Calls come first, other documents last. Among them, the conference
+        website comes first, then the announcement lists, then anything else;
+        within each, the most recent first.
         """
         covering = [
             c
@@ -116,7 +119,11 @@ class Database:
         ]
         covering.sort(key=lambda c: c.date, reverse=True)
         return sorted(
-            covering, key=lambda c: SOURCES.get(c.meta["source"], len(SOURCES))
+            covering,
+            key=lambda c: (
+                c.kind != CALL,
+                SOURCES.get(c.meta["source"], len(SOURCES)),
+            ),
         )
 
 
@@ -208,6 +215,7 @@ def _load_cfp(path: Path, policies: dict[str, Policy], rounds: list[Round]) -> C
         venue=venue,
         year=year,
         slug=path.stem,
+        kind=front.get("kind", CALL),
         date=front.get("published") or front["retrieved"],
         meta=front,
         covers=covers,

@@ -2,7 +2,7 @@
 {% block title %}{{ db.venues[cfp.venue].short }} {{ cfp.year }} · {% endblock %}
 {% block main %}
 {% set links = source(cfp.path) %}
-<h1>{{ db.venues[cfp.venue].short }} {{ cfp.year }}: call for papers</h1>
+<h1>{{ db.venues[cfp.venue].short }} {{ cfp.year }}: {{ "call for papers" if cfp.kind == "call" else cfp.kind | replace("-", " ") }}</h1>
 <table class="meta-table">
   {% if cfp.meta.subject %}<tr><th scope="row">Subject</th><td>{{ cfp.meta.subject }}</td></tr>{% endif %}
   <tr><th scope="row">Source</th><td>{{ sources.get(cfp.meta.source, cfp.meta.source) }}{% if cfp.meta.url %} · <a href="{{ cfp.meta.url }}">{{ cfp.meta.url }}</a>{% endif %}</td></tr>

@@ -72,6 +72,7 @@ The venue and year come from the path; the file name is the CfP's identifier.
 
 | Field | Meaning |
 |---|---|
+| `kind` | What the document is: `call` (the default), or another document of the edition, such as `reviewing-guidelines`. In the table, a policy the call does not mention is taken from the edition's other documents, if one of them mentions it. |
 | `source` | *required.* Where the text comes from: `website`, `dmanet`, `types-announce`, `pc-chair-page`, or any other name, such as a mailing list. The table shows the conference website first, then DMAnet and TYPES/announce, then the rest. |
 | `url` | Where the text was found. |
 | `published` | When it was posted, for a mailing list post. |

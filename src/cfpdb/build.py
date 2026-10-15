@@ -14,7 +14,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 from markupsafe import Markup
 
-from cfpdb.model import CfP, Database, DataError, Round, load
+from cfpdb.model import CALL, CfP, Database, DataError, Round, load
 
 ROOT = Path.cwd()
 OUT = ROOT / "_site"
@@ -25,7 +25,8 @@ SOURCE_NAMES = {
     "dmanet": "DMAnet",
     "types-announce": "TYPES/announce",
 }
-SILENT = "Not mentioned in the call for papers."
+SILENT = "Not mentioned."
+GAPS = ("—", "?")  # the call is silent, or not yet checked
 
 
 @dataclass(frozen=True)
@@ -168,10 +169,17 @@ def row(db: Database, rnd: Round) -> Row:
         Line(cfp, cfp.deadlines.get(rnd.id), [cell(cfp, rnd, c) for c in db.policies])
         for cfp in db.versions(rnd)
     ]
-    unknown = Line(
-        None, None, [Cell("?", "", note="Not yet checked.")] * len(db.policies)
-    )
-    return Row(rnd, versions[0] if versions else unknown, versions)
+    if not versions:
+        unknown = [Cell("?", "", note="Not yet checked.")] * len(db.policies)
+        return Row(rnd, Line(None, None, unknown), versions)
+    current, others = versions[0], [v for v in versions if v.cfp.kind != CALL]
+    cells = [  # where the call is silent, another document of the edition may speak
+        next((o.cells[i] for o in others if o.cells[i].text not in GAPS), x)
+        if x.text in GAPS
+        else x
+        for i, x in enumerate(current.cells)
+    ]
+    return Row(rnd, Line(current.cfp, current.deadline, cells), versions)
 
 
 def cell(cfp: CfP, rnd: Round, policy: str) -> Cell:

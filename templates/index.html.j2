@@ -9,7 +9,7 @@
   </fieldset>
 </form>
 
-<p class="click">Click a column heading to compare that policy across all calls for papers.</p>
+<p class="click">Click a column heading to compare that policy across all submission and reviewing guidelines.</p>
 <div class="scroll">
 <table id="policies">
   <thead>
@@ -49,7 +49,7 @@
     {% set several = r.versions | length > 1 %}
     <tr data-level="round" data-series="{{ sid }}" data-round="{{ rid }}" data-venue="{{ r.round.venue }}" hidden>
       <th scope="row" class="indent">
-        {% if several %}<button type="button" class="toggle" data-round="{{ rid }}" aria-expanded="false" title="Show every version of the call for papers">{{ when(r.round) }}</button>
+        {% if several %}<button type="button" class="toggle" data-round="{{ rid }}" aria-expanded="false" title="Show every version of the guidelines">{{ when(r.round) }}</button>
         {% else %}<span class="toggle-none">{{ when(r.round) }}</span>{% endif %}
       </th>
       <td class="date">{{ r.current.deadline or "" }}</td>
@@ -59,7 +59,7 @@
     <tr data-level="version" data-series="{{ sid }}" data-round="{{ rid }}" data-venue="{{ r.round.venue }}" hidden>
       <th scope="row" class="indent">
         {% if loop.first %}<button type="button" class="toggle" data-round="{{ rid }}" aria-expanded="true" title="Fold up">{{ when(r.round) }}</button><br>{% endif %}
-        <span class="version-label"><a href="{{ page(v.cfp) }}">{{ v.cfp.date }}</a> · {{ sources.get(v.cfp.meta.source, v.cfp.meta.source) }}{% if v.cfp.meta.call %}, {{ v.cfp.meta.call }}{% endif %}</span>
+        <span class="version-label"><a href="{{ page(v.cfp) }}">{{ v.cfp.date }}</a> · {{ sources.get(v.cfp.meta.source, v.cfp.meta.source) }}{% if v.cfp.kind != "call" %}, {{ v.cfp.kind | replace("-", " ") }}{% endif %}{% if v.cfp.meta.call %}, {{ v.cfp.meta.call }}{% endif %}</span>
       </th>
       <td class="date">{{ v.deadline or "" }}</td>
       {{ marks(v) }}
@@ -71,12 +71,12 @@
 </table>
 </div>
 
-<p class="click">Click any underlined entry to read the relevant section of the call for papers.</p>
+<p class="click">Click any underlined entry to read the relevant section of submission and reviewing guidelines.</p>
 <dl class="legend">
   <dt>✓</dt><dd>yes</dd>
   <dt>(✓)</dt><dd>pretty much</dd>
   <dt>✗</dt><dd>no</dd>
-  <dt>—</dt><dd>not mentioned in the call for papers</dd>
+  <dt>—</dt><dd>not mentioned</dd>
   <dt>?</dt><dd>not yet checked</dd>
 </dl>
 <script src="static/filter.js"></script>
